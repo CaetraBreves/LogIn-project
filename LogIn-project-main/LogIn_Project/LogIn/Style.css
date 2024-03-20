@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+*{
+    font-family: "Quicksand", sans-serif;
+    margin: 0px;
+    padding: 0px;
+
+    overflow-x: hidden;
+}
+
+main{
+    height: 100vh;
+    width: 100vw;
+
+
+    background-image: url(assets/Images/kevin-bhagat-zNRITe8NPqY-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#mainContent{
+    height: 65%;
+    width: 820px;
+
+    background-color: rgba(255, 255, 255, 0.836);
+    backdrop-filter: blur(20px);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border: solid white 2px;
+    
+    padding: 60px;
+
+    
+    
+    letter-spacing: 8px;
+
+    overflow-y: hidden;
+}
+
+#mainContent h2{
+   color: black;
+   letter-spacing: 1px;
+   font-size: 25px;
+   line-height: 100px;
+
+}
+#mainContent p{
+    letter-spacing: 1px;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: -10px;
+}
+#mainContent button{
+    width: 55px;
+    height: 55px;
+    border-radius: 50px;
+    border: transparent;
+     
+    margin-top: 13px;
+    font-size: 10px;
+    margin-left: 20px;
+
+    box-shadow: 5px 5px 5px rgb(241, 241, 241);
+}
+
+
+
+#logIn {
+    height: 65%;
+    width: 490px;
+    padding: 60px;
+    
+    border: solid white 2px;
+    backdrop-filter: blur(10px);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    flex-direction: column;
+
+    
+}
+
+#logIn h1 {
+    letter-spacing: 2px;
+    font-size: 50px;
+
+    overflow: hidden;
+    
+}
+
+#logInForm{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+#logInForm button{
+
+    height: 30px;
+    width: 100px;
+
+    color: black;
+
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+    border: white 1px black;
+    border-radius: 25px;
+
+    text-align: center;
+}
+
+#logInForm input{
+   
+    margin-top: -40px;
+    height: 30px;
+    width: 250px;
+
+    background-color: rgba(255, 255, 255, 0.61);
+    border: white 1px black;
+    border-radius: 25px;
+
+    font-size: 16px;
+    text-align: center;
+}
+
+#buttonsLogInPage{
+    width: 300px;
+
+
+    display: flex;
+    justify-content: space-around;
+}
+
+#regButton{
+    height: 30px;
+    width: 100px;
+
+    color: black;
+
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    
+
+    border: white 1px black;
+    border-radius: 25px;
+
+    text-align: center;
+     
+    margin-top: 10px;
+}
+
+#registerButton{
+    display: flex;
+    height: 80px;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+#buttonMainContent1{
+    background-color: rgb(236, 112, 103);
+}
+#buttonMainContent2{
+    background-color: rgb(236, 234, 103);
+}
+#buttonMainContent3{
+    background-color: rgb(103, 236, 103);
+}
