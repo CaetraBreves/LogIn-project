@@ -25,7 +25,7 @@
                     <input type="text" name="regName">
                     <h2>Password:</h2>
                     <input type="password" name="regPass"><br>
-                    <p>Already have an account? <a href="index.php">Click here.</a></p>
+                    <p>Already have an account? <a href="LogIn.php">Click here.</a></p>
                     <button id="signUp" type="submit">Sign up!</button>
                 </form>
             </div>

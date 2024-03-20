@@ -1,48 +1,45 @@
 <?php
+require_once 'conn.php';
 
-session_start();
 
-$servidor = "localhost";
-$basedados = "LogInProject";
-$utilizador = "Reg";
-$password = "System32";
-$dst="mysql:host=$servidor; dbname=$basedados; charset=UTF8";
+
+
+$nome = filter_var($_POST["regName"], FILTER_SANITIZE_SPECIAL_CHARS);
+$pass = filter_var($_POST["regPass"], FILTER_SANITIZE_SPECIAL_CHARS);
+
+
 
 try {
-$conn = new PDO($dst, $utilizador, $password);
+    
+    $conn = new PDO($dst, $utilizador, $password);
 
-$_SESSION["username"] = filter_var($_POST["regName"], FILTER_SANITIZE_SPECIAL_CHARS);
-$_SESSION["password"] = filter_var($_POST["regPass"], FILTER_SANITIZE_SPECIAL_CHARS);
+    if(isset($_POST["regName"]) && ($_POST["regPass"])){
 
-$nome = $_SESSION['username'];
-$password = $_SESSION['password'];
-
-
-if (isset($nome) && isset($password)) {
-
-
-        $sql = "INSERT INTO users (username, password)  VALUES ('$nome', '$password'); ";
-        $pdo->prepare($sql);
-        $stmt->execute([$nome, $password]);
+        $_SESSION['username'] = $nome;
+        $_SESSION['password']  = $pass;
         
-        $registerFail = "";
 
-        include '../LogIn/Content/assets/Content.php';
+        $sql = "INSERT INTO users (username, password) VALUES (:username, :password);";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([':username' => $nome,
+                        ':password' => $pass]);
         
-       
-    } else {
-       
-        $registerFail = "Falha ao registar utilizador!";
+        $regMsg = "Valor introduzido com sucesso!";
 
-        
+        echo $regMsg;
+
+    }else{
+
+        $regMsg = "Algo correu mal.";
+
+        echo $regMsg;
+
+        $nome = NULL;
+        $pass = NULL;
+
         $_SESSION["username"] = NULL;
         $_SESSION["password"] = NULL;
-		include '../LogIn/Register.php';
-	}
-
+    }
 } catch (PDOException $err) {
-    die("A ligação ao servidor $servidor falhou com o erro: " . $err->getMessage());
+    die($err);
 }
-
-
-?>
